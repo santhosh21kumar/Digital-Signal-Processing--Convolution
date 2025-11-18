@@ -19,10 +19,45 @@ Step 6: Plot the sequence with x-label and y-label with suitable title
 Step 7: Terminate the program.
 
 ## PROGRAM: 
+clc; % clear screen
+clear all; % clear screen
+close all; % close all figure windows
+% INPUT SEQUENCE
+a=input('enter the starting x(n)');
+x=input('enter the x(n) sequence');
+n=a:1:length(x)+a-1;
+figure(1);
+stem(n,x);
+xlabel('time');
+ylabel('amplitude');
+title('input sequence');
+% IMPULSE SEQUENCE
+b=input('enter the starting h(n)');
+y=input('enter the h(n) sequence');
+m=b:1:length(y)+b-1;
+figure(2);
+stem(m,y);
+xlabel('time');
+ylabel('amplitude');
+title('impulse response')
+% LINEAR CONVOLUTION
+z=conv2(x,y);
+n1=a+b:1:length(z)+a+b-1;
+figure(3);
+stem(n1,z);
+xlabel('time');
+ylabel('amplitude');
+title( 'linear convolution');
 
 
 ## OUTPUT:
+<img width="963" height="298" alt="image" src="https://github.com/user-attachments/assets/7dadeaae-b91f-4b66-bfdc-511ddc80a76a" />
+<img width="963" height="336" alt="image" src="https://github.com/user-attachments/assets/2bc0702f-9144-46db-825d-50e377ee1093" />
+<img width="1104" height="801" alt="image" src="https://github.com/user-attachments/assets/8be5e762-9a40-4c7e-b71b-d39a288a56ad" />
+
+
+
 
 
 ## RESULT:
-
+{6.4,17.8,5.7,-14.7,-43.6,55.8,7.2,47.1,60.2,-8.3,-1.7,23.7,15.2}
